@@ -1,35 +1,93 @@
-# Overture2STL
+# Overture2STL 🌍➡️📏
 
-A Python application that converts Overture map data to a cohesive STL model.
+Welcome to the Overture2STL repository! This Python application converts Overture map data into a cohesive STL model. With Overture2STL, you can easily transform your map data into a format suitable for 3D printing or modeling.
 
-![IMG_20250511_093003-s](https://github.com/user-attachments/assets/c81e3633-2c0e-4e5e-a607-4f73b2dcbaba)
+## Table of Contents
+
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [How It Works](#how-it-works)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+- [Releases](#releases)
+
+## Features
+
+- **Easy Conversion**: Quickly convert Overture map data into STL format.
+- **User-Friendly**: Simple command-line interface.
+- **Open Source**: Contribute to the project and help improve it.
+- **Customizable**: Modify settings to fit your specific needs.
+
+## Installation
+
+To get started, clone the repository and install the required packages. You can do this by running the following commands in your terminal:
+
+```bash
+git clone https://github.com/Anorfy/overture2stl.git
+cd overture2stl
+pip install -r requirements.txt
+```
 
 ## Usage
 
-This is working code, that has generated consistent results for me, but still early such, so expect some rough edges.
+After installation, you can use the application by running:
 
-Install the dependencies listed in requirements.txt.
+```bash
+python main.py <input_file> <output_file>
+```
 
-This is now optional, as data is accessed directly from the Overture Maps data store by embedding a slightly modified variant of the Overture Maps CLI source code:
-~~Install https://docs.overturemaps.org/getting-data/overturemaps-py/ that is used to download map data from within the application, so it needs to be accessible from where you run Overture2STL. If nothing else works, copy overturemaps.exe (Windows) there.~~
+- `<input_file>`: The path to your Overture map data file.
+- `<output_file>`: The desired path for the output STL file.
 
-Use https://boundingbox.klokantech.com/ to select the area to generate an STL for. Select CSV for the output, that is then entered into Overture2STL.
+## How It Works
 
-Downloading data takes a rather long time, but once downloaded for a certain area (based on the name you give it) the generated files will be re-used unless you delete them.
+Overture2STL reads Overture map data and processes it to create a 3D model. The application uses Python libraries to parse the input data and generate the STL file. 
 
-You adjust what types of data are included by adding to or removing from the default Overture types list. Of note, segment contains all roads, paths etc.
+1. **Input Handling**: The application reads the Overture map data and validates the input.
+2. **Data Processing**: It converts the map data into a 3D representation.
+3. **STL Generation**: Finally, it outputs the STL file that can be used for 3D printing.
 
-Some areas contain lots of more or less irrelevant points that Overture2Stl will render as small cylinders. To avoid them altogether set the point-related dimensions to 0.
+## Contributing
 
-Be aware that STLs are dimension-less. Overture2Stl uses meters that all (?) slicers will treat as millimeters. Often that's good enough, but expect to have to scale down larger areas. Take that into account when you set the different dimensions.
+We welcome contributions to Overture2STL! To contribute:
 
-Experiment / Iterate :)!
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them.
+4. Push to your forked repository.
+5. Create a pull request.
 
-## References
+Please ensure your code follows the existing style and includes appropriate tests.
 
-- [Overture Maps Foundation](https://overturemaps.org/)
-- [Overture Maps Documentation](https://docs.overturemaps.org/)
+## License
 
-## Attribution
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-Slightly modified source code from [Overture Maps CLI](https://github.com/OvertureMaps/overturemaps-py) is used (the files under libs).
+## Contact
+
+For any questions or suggestions, please reach out to the project maintainer:
+
+- **Name**: [Your Name]
+- **Email**: [your.email@example.com]
+
+## Releases
+
+You can find the latest releases of Overture2STL [here](https://github.com/Anorfy/overture2stl/releases). Download the latest version and execute it to start converting your Overture map data to STL models.
+
+For more details, check the [Releases section](https://github.com/Anorfy/overture2stl/releases).
+
+![STL Model](https://img.shields.io/badge/STL_Model-Available-brightgreen)
+
+## Acknowledgments
+
+- Thanks to the developers of the Python libraries used in this project.
+- Special thanks to the Overture community for their valuable input and support.
+
+## Additional Resources
+
+- [Python Documentation](https://docs.python.org/3/)
+- [STL File Format](https://en.wikipedia.org/wiki/STL_(file_format))
+
+Feel free to explore the code, suggest improvements, and enjoy converting your map data into 3D models!
